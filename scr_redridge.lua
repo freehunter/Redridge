@@ -1,4 +1,3 @@
-
 -- THIS IS AN EXPERIMENTAL FORK OF REDRIDGE
 -- THIS IS DESIGNED FOR UI TESTING
 -- ALL ACCEPTED CHANGES SHOULD BE PUSHED BACK INTO REDRIDGE CORE
@@ -23,8 +22,6 @@
 	known BUGS:
 	rundam is a nil variable
 		mstr is the substitute for now
-	php doesn't get updated in screen if you enter an invalid command
-		only the first time you enter the invalid command
 
 	]]--
 
@@ -181,6 +178,7 @@ function screen()
 
 	--take what's in the screen buffer and write it to the output
 	--15 lines to be written to, with a couple reserved at the top
+	--could this be a loop? yes. DAMMIT JIM I'M A SECURITY PROFESSIONAL NOT A PROGRAMMER
 	os.execute("cls")
 	print("")
 	print("                               REDRIDGE V.1 (TEST)                              ")
