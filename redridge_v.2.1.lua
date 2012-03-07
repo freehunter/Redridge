@@ -78,15 +78,17 @@ mob.beetle = {
 	hp = 10,
 	str = 2,
 	name = "Beetle",
+	dispname = "	Beetle",
 	money = 3,
 	xp = 4
 	}
 mob.beetleboss = {
 	hp = 30,
-	str = 2,
-	name = "-{{King Beetle}}-",
-	money = 3,
-	xp = 4
+	str = 8,
+	name = "King Beetle",
+	dispname = "{{King Beetle}}",
+	money = 8,
+	xp = 5
 	}
 
 actmob = mob.beetle
@@ -95,32 +97,67 @@ mob.goblin = {
 	hp = 15,
 	str = 6,
 	name = "Goblin",
+	dispname = "	Goblin",
 	money = 10,
 	xp = 7
+	}
+mob.goblinboss = {
+	hp = 40,
+	str = 12,
+	name = "King Goblin",
+	dispname = "{{King Goblin}}",
+	money = 30,
+	xp = 5
 	}
 
 mob.troll = {
 	hp = 25,
 	str = 12,
 	name = "Troll",
+	dispname = "	Troll",
 	money = 10,
 	xp = 10
 	}
+mob.trollboss = {
+	hp = 60,
+	str = 15,
+	name = "Troll King",
+	dispname = "{{Troll King}}",
+	money = 40,
+	xp = 5
+	}
+
 
 mob.giant = {
 	hp = 45,
 	str = 20,
 	name = "Giant",
+	dispname = "	Giant",
 	money = 30,
 	xp = 20
+	}
+mob.giantboss = {
+	hp = 60,
+	str = 30,
+	name = "{{King Giant}}",
+	money = 70,
+	xp = 5
 	}
 
 mob.hunter = {
 	hp = 65,
 	str = 28,
 	name = "Bounty Hunter",
+	dispname = "Bounty Hunter",
 	money = 70,
 	xp = 50
+	}
+mob.hunterboss = {
+	hp = 80,
+	str = 32,
+	name = "{{Bounty Lord}}",
+	money = 100,
+	xp = 5
 	}
 
 level = {} --defines player level and HP
@@ -145,7 +182,8 @@ level.two = {
 	xpto = 100,
 	xp = 50,
 	name = 'Fighter',
-	location = 'Redridge Outskirts'
+	location = 'Redridge Outskirts',
+	boss = mob.goblinboss
 	}
 
 level.three = {
@@ -155,7 +193,8 @@ level.three = {
 	xpto = 200,
 	xp = 100,
 	name = 'Warrior',
-	location = 'Town Road'
+	location = 'Town Road',
+	boss = mob.trollboss
 	}
 
 level.four = {
@@ -165,7 +204,8 @@ level.four = {
 	xpto = 300,
 	xp = 200,
 	name = 'Suspect',
-	location = 'Black Rock Lake'
+	location = 'Black Rock Lake',
+	boss = mob.giantboss
 	}
 
 level.five = {
@@ -175,7 +215,8 @@ level.five = {
 	xpto = 700,
 	xp = 300,
 	name = 'Criminal',
-	location = 'Black Rock Road'
+	location = 'Black Rock Road',
+	boss = mob.hunterboss
 	}
 
 skills = {}
@@ -361,7 +402,7 @@ batt = 1
 		php = php - mstr
 		if mhp > 0 then
 			if php > 0 then
-				scr1 = ("" .. plevel.name .. "									" .. actmob.name .. "")
+				scr1 = ("" .. plevel.name .. "								" .. actmob.dispname .. "")
 				scr2 = ("HP: " .. php .. "									HP: " .. mhp .. "")
 				scr3 = ("XP: " .. plevel.xp .. "							XP Needed	" .. plevel.xpto .. "")
 				scr8 = ("You took " .. mstr .. " damage!")
