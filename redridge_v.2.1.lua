@@ -21,6 +21,7 @@
 	in certain cases, no input or the wrong input dumps you out of the program
 		all error cases must be handled properly
 	in certain cases your health can dip into the negatives but you can still get back to town to heal
+	in every case your health doesn't update after a level until you've entered another fight
 
 	]]--
 
@@ -347,11 +348,10 @@ function screen()
 
 	if dead == 1 then
 		io.read()
-	elseif bfight == 2 then
-		bfight = 3
-		batt = 1
+	elseif bfight == 1 then
+		--pause so the player can see the shit they're in
 		io.read()
-		newbattle()
+		bossfight()
 	elseif batt == 1 then
 		action = io.read()
 		battle()
@@ -542,7 +542,22 @@ function lvlup (x)
 	if plevel.xp > plevel.xpto then
 		if bfight == 0 then
 			bfight = 1
-			bossfight()
+			actmob = plevel.boss
+				scr1 = " "
+				scr2 = " "
+				scr3 = " "
+				scr4 = "You've won the battle..."
+				scr5 = " "
+				scr6 = " "
+				scr7 = "But you've drawn attention to yourself."
+				scr8 = " "
+				scr9 = " "
+				scr10 = "Here comes a " .. actmob.name .. "!"
+				scr11 = " "
+				scr12 = " "
+				scr13 = " "
+				scr14 = "Prepare to fight..."
+				screen()
 		elseif bfight == 3 then
 			curlev = curlev + 1
 			if curlev == 1 then
@@ -590,12 +605,9 @@ end
 
 function bossfight()
 	if bfight == 1 then
-		actmob = plevel.boss
-		scr9 = "You encounter the " .. actmob.name .. "!"
-		scr10 = "Prepare for a fight..."
+		bfight = 3
 		batt = 1
-		bfight = 2
-		screen()
+		newbattle()
 	else
 		bfight = 0
 		screen()
