@@ -1,4 +1,4 @@
---[[ Redridge v.3.3
+--[[ Redridge v.6
 	an text-based action-adventure game POC
 	]]--
 
