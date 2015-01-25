@@ -1,7 +1,5 @@
-This is a toy app for learning Lua. Egor (and anyone else) please don't hack me.
+This is a toy adventure RPG I made for learning Lua.
 
 The source is open, but this is not released under any open source license. 
 No one is authorized to use any code within, and honestly who would want to? 
 It's all pretty crappy code.
-
-Besides, the code is rewritten a couple times per week, so any changes will be broken immediately.
